@@ -6,19 +6,19 @@ const solutionsMenu = [
     product: "LoqHRMS",
     description: "Complete HR management suite",
     items: [
-      { label: "Attendance Tracking", desc: "Real-time clock-in/out & reports" },
-      { label: "Asset Management", desc: "Track company assets & assignments" },
-      { label: "Payroll Generation", desc: "Automated, compliant payroll" },
-      { label: "Employee Records", desc: "Centralised employee data" },
+      { label: "Attendance Tracking", desc: "Real-time clock-in/out & reports", href: "/solutions/hrms/attendance-tracking" },
+      { label: "Asset Management", desc: "Track company assets & assignments", href: "/solutions/hrms/asset-management" },
+      { label: "Payroll Generation", desc: "Automated, compliant payroll", href: "/solutions/hrms/payroll-generation" },
+      { label: "Employee Records", desc: "Centralised employee data", href: "/solutions/hrms/employee-records" },
     ],
   },
   {
     product: "LoqTalent",
     description: "AI-powered talent acquisition",
     items: [
-      { label: "ATS", desc: "Applicant tracking system" },
-      { label: "AI Resume Screener", desc: "Rank candidates in seconds" },
-      { label: "Talent Acquisition", desc: "End-to-end hiring pipeline" },
+      { label: "ATS", desc: "Applicant tracking system", href: "/solutions/talent/ats" },
+      { label: "AI Resume Screener", desc: "Rank candidates in seconds", href: "/solutions/talent/ai-resume-screener" },
+      { label: "Talent Acquisition", desc: "End-to-end hiring pipeline", href: "/solutions/talent/talent-acquisition" },
     ],
   },
 ];
@@ -67,14 +67,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="/" className="flex-shrink-0">
-            <img
-              src="/loqai-logo.png"
-              alt="LoqAI"
-              className="h-10 w-auto"
-            />
+            <img src="/loqai-logo.png" alt="LoqAI" className="h-10 w-auto" />
           </a>
 
           <div className="hidden lg:flex items-center gap-1">
+            {/* Solutions dropdown */}
             <div className="relative">
               <button
                 onClick={() => toggle("solutions")}
@@ -83,9 +80,7 @@ export default function Navbar() {
                 Solutions
                 <ChevronDown
                   size={14}
-                  className={`transition-transform duration-200 ${
-                    activeMenu === "solutions" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${activeMenu === "solutions" ? "rotate-180" : ""}`}
                 />
               </button>
               {activeMenu === "solutions" && (
@@ -96,23 +91,20 @@ export default function Navbar() {
                         <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider">
                           {product.product}
                         </p>
-                        <p className="text-xs text-white/40 mt-0.5">
-                          {product.description}
-                        </p>
+                        <p className="text-xs text-white/40 mt-0.5">{product.description}</p>
                       </div>
                       <div className="space-y-1">
                         {product.items.map((item) => (
                           <a
                             key={item.label}
-                            href="#"
+                            href={item.href}
+                            onClick={() => setActiveMenu(null)}
                             className="flex flex-col px-3 py-2 rounded-lg hover:bg-white/5 transition-colors group"
                           >
                             <span className="text-sm text-white/80 group-hover:text-white transition-colors">
                               {item.label}
                             </span>
-                            <span className="text-xs text-white/40">
-                              {item.desc}
-                            </span>
+                            <span className="text-xs text-white/40">{item.desc}</span>
                           </a>
                         ))}
                       </div>
@@ -129,6 +121,7 @@ export default function Navbar() {
               Pricing
             </a>
 
+            {/* Resources dropdown */}
             <div className="relative">
               <button
                 onClick={() => toggle("resources")}
@@ -137,9 +130,7 @@ export default function Navbar() {
                 Resources
                 <ChevronDown
                   size={14}
-                  className={`transition-transform duration-200 ${
-                    activeMenu === "resources" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${activeMenu === "resources" ? "rotate-180" : ""}`}
                 />
               </button>
               {activeMenu === "resources" && (
@@ -162,10 +153,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="#"
-              className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors"
-            >
+            <a href="#" className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors">
               Log in
             </a>
             <a
@@ -185,23 +173,34 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-zinc-950 border-t border-white/10 px-6 py-4 space-y-4">
           <div>
             <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
-              Solutions
+              LoqHRMS
             </p>
-            {solutionsMenu.map((p) =>
-              p.items.map((item) => (
-                <a
-                  key={item.label}
-                  href="#"
-                  className="block py-2 text-sm text-white/70 hover:text-white"
-                >
-                  {item.label}
-                </a>
-              ))
-            )}
+            {solutionsMenu[0].items.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="block py-2 text-sm text-white/70 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+            <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2 mt-3">
+              LoqTalent
+            </p>
+            {solutionsMenu[1].items.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="block py-2 text-sm text-white/70 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
           <div>
             <a href="/pricing" className="block py-2 text-sm text-white/70 hover:text-white">
@@ -213,19 +212,13 @@ export default function Navbar() {
               Resources
             </p>
             {resourcesMenu.map((item) => (
-              <a
-                key={item.label}
-                href="#"
-                className="block py-2 text-sm text-white/70 hover:text-white"
-              >
+              <a key={item.label} href="#" className="block py-2 text-sm text-white/70 hover:text-white">
                 {item.label}
               </a>
             ))}
           </div>
           <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
-            <a href="#" className="text-sm text-white/70 hover:text-white">
-              Log in
-            </a>
+            <a href="#" className="text-sm text-white/70 hover:text-white">Log in</a>
             <a
               href="#"
               className="w-full text-center px-5 py-2.5 text-sm font-medium bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg"
