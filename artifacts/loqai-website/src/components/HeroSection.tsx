@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -32,8 +32,7 @@ export default function HeroSection() {
             href="#"
             className="flex items-center gap-2 px-7 py-3.5 border border-white/15 text-white/80 hover:text-white hover:border-white/25 font-medium rounded-xl transition-colors text-sm"
           >
-            <Play size={14} className="fill-current" />
-            Watch Demo
+            Book Free Consultation
           </a>
         </div>
 
