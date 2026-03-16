@@ -25,14 +25,14 @@ export default function HeroSection() {
             href="#"
             className="flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-xl hover:opacity-90 transition-opacity shadow-xl shadow-purple-900/30 text-sm"
           >
-            Start Free Trial
+            Book a free LoqHRMS trial
             <ArrowRight size={16} />
           </a>
           <a
             href="#"
             className="flex items-center gap-2 px-7 py-3.5 border border-white/15 text-white/80 hover:text-white hover:border-white/25 font-medium rounded-xl transition-colors text-sm"
           >
-            Book Free Consultation
+            Avail 100 free AI resume screening
           </a>
         </div>
 
