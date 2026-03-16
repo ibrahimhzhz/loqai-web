@@ -10,21 +10,14 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8 text-xs text-white/60 backdrop-blur-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-          Now available: AI Resume Screener v2.0
-        </div>
-
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.05]">
-          The Future of{" "}
-          <span className="gradient-text">HR & Talent</span>
-          <br />
-          Management
+          Trusted by{" "}
+          <span className="gradient-text">400+ Founders</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed">
-          LoqAI brings together intelligent HR automation and AI-powered hiring
-          tools — so your team can focus on people, not paperwork.
+          One platform, complete HR coverage. From employee payroll management
+          to streamlining recruitment.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
