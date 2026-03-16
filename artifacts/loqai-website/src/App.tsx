@@ -40,6 +40,23 @@ function Router() {
         <FeatureDetailPage slug="talent-acquisition" />
       </Route>
 
+      {/* LoqBot pages */}
+      <Route path="/solutions/loqbot/hotels">
+        <FeatureDetailPage slug="hotels" />
+      </Route>
+      <Route path="/solutions/loqbot/restaurants">
+        <FeatureDetailPage slug="restaurants" />
+      </Route>
+      <Route path="/solutions/loqbot/e-commerce">
+        <FeatureDetailPage slug="e-commerce" />
+      </Route>
+      <Route path="/solutions/loqbot/real-estate">
+        <FeatureDetailPage slug="real-estate" />
+      </Route>
+      <Route path="/solutions/loqbot/custom-chatbot">
+        <FeatureDetailPage slug="custom-chatbot" />
+      </Route>
+
       <Route component={NotFound} />
     </Switch>
   );

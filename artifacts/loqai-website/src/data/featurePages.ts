@@ -10,7 +10,7 @@ export interface StatItem {
 
 export interface FeaturePage {
   slug: string;
-  product: "LoqHRMS" | "LoqTalent";
+  product: "LoqHRMS" | "LoqTalent" | "LoqBot";
   productSlug: string;
   title: string;
   tagline: string;
@@ -372,6 +372,136 @@ export const featurePages: FeaturePage[] = [
       { value: "3×", label: "Larger candidate pipeline" },
     ],
     mockupType: "talent",
+  },
+  {
+    slug: "hotels",
+    product: "LoqBot",
+    productSlug: "loqbot",
+    title: "LoqBot for Hotels",
+    tagline: "Your 24/7 AI concierge. Always on, always helpful.",
+    description:
+      "Give every guest an instant, intelligent experience. LoqBot handles reservations, room queries, amenity bookings, and local recommendations — around the clock, in any language.",
+    heroDescription:
+      "From check-in assistance to late-night room service requests, LoqBot ensures no guest query goes unanswered — without adding to your front desk workload.",
+    accentColor: "blue",
+    features: [
+      { title: "Reservation Assistance", description: "Guests can check availability, modify bookings, and confirm reservations directly in the chat — no hold music required." },
+      { title: "Room Service Requests", description: "Accept and route room service, housekeeping, and maintenance requests through the bot to the right department instantly." },
+      { title: "Amenity Bookings", description: "Let guests book the spa, gym, restaurant tables, and pool slots through a simple conversational interface." },
+      { title: "Local Recommendations", description: "LoqBot curates personalised local guides — restaurants, attractions, transport — based on guest preferences." },
+      { title: "Multi-Language Support", description: "Communicate with guests in their native language. LoqBot supports 40+ languages out of the box." },
+      { title: "PMS Integration", description: "Connect with your property management system to pull live room data, guest profiles, and booking details in real time." },
+    ],
+    stats: [
+      { value: "24/7", label: "Guest support coverage" },
+      { value: "40+", label: "Languages supported" },
+      { value: "70%", label: "Queries resolved without staff" },
+    ],
+    mockupType: "loqbot-hotel",
+  },
+  {
+    slug: "restaurants",
+    product: "LoqBot",
+    productSlug: "loqbot",
+    title: "LoqBot for Restaurants",
+    tagline: "Fill tables. Delight diners. Automate everything in between.",
+    description:
+      "LoqBot handles table reservations, menu queries, delivery orders, and customer feedback — so your team can focus on delivering great food and service.",
+    heroDescription:
+      "Whether it's a walk-in asking about today's specials or an online customer tracking their delivery, LoqBot keeps conversations flowing and operations running smoothly.",
+    accentColor: "blue",
+    features: [
+      { title: "Table Reservations", description: "Guests can book, modify, or cancel reservations via chat — synced directly to your booking system in real time." },
+      { title: "Menu & Allergen Queries", description: "Answer questions about dishes, daily specials, allergens, and dietary options instantly and accurately." },
+      { title: "Online Order Tracking", description: "Customers can track their delivery or takeaway order status without calling the restaurant." },
+      { title: "Feedback Collection", description: "Automatically gather post-dining feedback and flag negative reviews for immediate follow-up." },
+      { title: "Loyalty Programme", description: "Integrate with your loyalty scheme so returning customers can check points, rewards, and exclusive offers." },
+      { title: "Peak Hour Handling", description: "No matter how busy it gets, LoqBot handles unlimited simultaneous conversations without breaking a sweat." },
+    ],
+    stats: [
+      { value: "3×", label: "More bookings via chat" },
+      { value: "0", label: "Missed reservation enquiries" },
+      { value: "92%", label: "Customer satisfaction rate" },
+    ],
+    mockupType: "loqbot-restaurant",
+  },
+  {
+    slug: "e-commerce",
+    product: "LoqBot",
+    productSlug: "loqbot",
+    title: "LoqBot for E-Commerce",
+    tagline: "Convert browsers into buyers. Retain them for life.",
+    description:
+      "LoqBot powers smarter shopping experiences — answering product questions, guiding purchases, recovering abandoned carts, and handling post-sale support automatically.",
+    heroDescription:
+      "From first visit to repeat purchase, LoqBot is the intelligent assistant that turns your store into a 24/7 sales and support engine.",
+    accentColor: "blue",
+    features: [
+      { title: "Product Discovery", description: "Help shoppers find exactly what they need with conversational product search, filtering, and personalised recommendations." },
+      { title: "Cart Recovery", description: "Automatically re-engage customers who abandoned their carts with personalised reminders and incentive offers." },
+      { title: "Order Tracking", description: "Customers can check order status, delivery estimates, and shipping updates in real time — no support ticket needed." },
+      { title: "Returns & Refunds", description: "Handle return requests, refund status enquiries, and exchange processes through guided chat flows." },
+      { title: "Upsell & Cross-Sell", description: "LoqBot intelligently suggests complementary products and upgrades at the right moment in the buying journey." },
+      { title: "Shopify & WooCommerce", description: "Integrate seamlessly with your existing store platform — no custom development required." },
+    ],
+    stats: [
+      { value: "35%", label: "Increase in conversion rate" },
+      { value: "60%", label: "Reduction in support tickets" },
+      { value: "4.8★", label: "Average customer rating" },
+    ],
+    mockupType: "loqbot-ecommerce",
+  },
+  {
+    slug: "real-estate",
+    product: "LoqBot",
+    productSlug: "loqbot",
+    title: "LoqBot for Real Estate",
+    tagline: "Qualify leads while you sleep. Close deals faster.",
+    description:
+      "LoqBot engages every property enquiry instantly — qualifying leads, answering listing questions, scheduling viewings, and nurturing prospects through the buying journey automatically.",
+    heroDescription:
+      "Never lose a lead to slow response times again. LoqBot responds in seconds, 24/7, so your agents focus only on the most promising opportunities.",
+    accentColor: "blue",
+    features: [
+      { title: "Lead Qualification", description: "Ask the right questions to qualify buyer intent, budget, and timeline — routing hot leads directly to your agents." },
+      { title: "Listing Information", description: "Provide instant answers about property specs, pricing, availability, neighbourhood data, and virtual tour links." },
+      { title: "Viewing Scheduler", description: "Let prospects book property viewings directly through the chat — synced to your agents' calendars automatically." },
+      { title: "Mortgage Calculator", description: "Give buyers instant indicative mortgage calculations based on property price and deposit, within the conversation." },
+      { title: "CRM Integration", description: "Every qualified lead and conversation is pushed automatically to your CRM — no manual data entry." },
+      { title: "Follow-Up Sequences", description: "Automated follow-up messages keep prospects warm and guide them toward the next step in their buying journey." },
+    ],
+    stats: [
+      { value: "5 sec", label: "Average lead response time" },
+      { value: "4×", label: "More viewings scheduled" },
+      { value: "80%", label: "Leads auto-qualified" },
+    ],
+    mockupType: "loqbot-realestate",
+  },
+  {
+    slug: "custom-chatbot",
+    product: "LoqBot",
+    productSlug: "loqbot",
+    title: "Custom Chatbot",
+    tagline: "Built for your business. Trained on your data.",
+    description:
+      "Every business is unique. LoqBot's custom tier lets you build a fully branded AI assistant trained on your own documents, workflows, and knowledge base — deployed anywhere.",
+    heroDescription:
+      "From internal knowledge bots to customer-facing agents, LoqBot Custom gives you the full power of AI — configured exactly the way you need it.",
+    accentColor: "blue",
+    features: [
+      { title: "Custom Knowledge Base", description: "Train LoqBot on your own documents, FAQs, SOPs, and data sources so it answers with your specific knowledge." },
+      { title: "Brand Personalisation", description: "Full control over the bot's name, avatar, tone of voice, and visual style to match your brand identity." },
+      { title: "Multi-Channel Deployment", description: "Deploy your bot on your website, WhatsApp, Instagram DMs, Telegram, and mobile app from a single build." },
+      { title: "Workflow Automation", description: "Connect LoqBot to your internal tools — CRM, ERP, ticketing systems — to trigger actions from conversations." },
+      { title: "Analytics Dashboard", description: "Track conversation volumes, resolution rates, top queries, and user satisfaction in a real-time dashboard." },
+      { title: "Human Handoff", description: "When the bot reaches its limits, it seamlessly transfers the conversation to a live agent — with full context." },
+    ],
+    stats: [
+      { value: "Any", label: "Industry or use case" },
+      { value: "6+", label: "Deployment channels" },
+      { value: "14 days", label: "Average time to launch" },
+    ],
+    mockupType: "loqbot-custom",
   },
 ];
 

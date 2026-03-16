@@ -11,6 +11,13 @@ import RecordsMockup from "@/components/mockups/RecordsMockup";
 import ATSMockup from "@/components/mockups/ATSMockup";
 import ScreenerMockup from "@/components/mockups/ScreenerMockup";
 import TalentMockup from "@/components/mockups/TalentMockup";
+import LoqBotMockup from "@/components/mockups/LoqBotMockup";
+
+function LoqBotHotel() { return <LoqBotMockup variant="loqbot-hotel" />; }
+function LoqBotRestaurant() { return <LoqBotMockup variant="loqbot-restaurant" />; }
+function LoqBotEcommerce() { return <LoqBotMockup variant="loqbot-ecommerce" />; }
+function LoqBotRealEstate() { return <LoqBotMockup variant="loqbot-realestate" />; }
+function LoqBotCustom() { return <LoqBotMockup variant="default" />; }
 
 const mockupComponents: Record<string, React.ComponentType> = {
   attendance: AttendanceMockup,
@@ -20,6 +27,11 @@ const mockupComponents: Record<string, React.ComponentType> = {
   ats: ATSMockup,
   screener: ScreenerMockup,
   talent: TalentMockup,
+  "loqbot-hotel": LoqBotHotel,
+  "loqbot-restaurant": LoqBotRestaurant,
+  "loqbot-ecommerce": LoqBotEcommerce,
+  "loqbot-realestate": LoqBotRealEstate,
+  "loqbot-custom": LoqBotCustom,
 };
 
 interface Props {
@@ -64,7 +76,7 @@ export default function FeatureDetailPage({ slug }: Props) {
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${accentBgClass}`}>
-                    {page.product}
+                    {page.productSlug === "loqbot" ? "LoqBot" : page.product}
                   </span>
                   <ChevronRight size={12} className="text-white/20" />
                   <span className="text-xs text-white/35">{page.title}</span>

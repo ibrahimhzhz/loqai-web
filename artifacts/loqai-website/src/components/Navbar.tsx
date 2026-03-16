@@ -5,6 +5,7 @@ const solutionsMenu = [
   {
     product: "LoqHRMS",
     description: "Complete HR management suite",
+    isNew: false,
     items: [
       { label: "Attendance Tracking", desc: "Real-time clock-in/out & reports", href: "/solutions/hrms/attendance-tracking" },
       { label: "Asset Management", desc: "Track company assets & assignments", href: "/solutions/hrms/asset-management" },
@@ -15,10 +16,23 @@ const solutionsMenu = [
   {
     product: "LoqTalent",
     description: "AI-powered talent acquisition",
+    isNew: false,
     items: [
       { label: "ATS", desc: "Applicant tracking system", href: "/solutions/talent/ats" },
       { label: "AI Resume Screener", desc: "Rank candidates in seconds", href: "/solutions/talent/ai-resume-screener" },
       { label: "Talent Acquisition", desc: "End-to-end hiring pipeline", href: "/solutions/talent/talent-acquisition" },
+    ],
+  },
+  {
+    product: "LoqBot",
+    description: "AI chatbots for any industry",
+    isNew: true,
+    items: [
+      { label: "Hotels", desc: "24/7 AI concierge for guests", href: "/solutions/loqbot/hotels" },
+      { label: "Restaurants", desc: "Reservations & orders on autopilot", href: "/solutions/loqbot/restaurants" },
+      { label: "E-Commerce", desc: "Convert browsers into buyers", href: "/solutions/loqbot/e-commerce" },
+      { label: "Real Estate", desc: "Qualify leads while you sleep", href: "/solutions/loqbot/real-estate" },
+      { label: "Custom Chatbot", desc: "Built for your exact needs", href: "/solutions/loqbot/custom-chatbot" },
     ],
   },
 ];
@@ -84,13 +98,20 @@ export default function Navbar() {
                 />
               </button>
               {activeMenu === "solutions" && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-4">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[860px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-3 gap-4">
                   {solutionsMenu.map((product) => (
                     <div key={product.product}>
                       <div className="mb-3">
-                        <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider">
-                          {product.product}
-                        </p>
+                        <div className="flex items-center gap-2">
+                          <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider">
+                            {product.product}
+                          </p>
+                          {product.isNew && (
+                            <span className="px-1.5 py-0.5 bg-blue-600 text-white text-[10px] font-bold rounded-full leading-none">
+                              NEW
+                            </span>
+                          )}
+                        </div>
                         <p className="text-xs text-white/40 mt-0.5">{product.description}</p>
                       </div>
                       <div className="space-y-1">
@@ -196,6 +217,22 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
+                className="block py-2 text-sm text-white/70 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="flex items-center gap-2 mt-3 mb-2">
+              <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider">
+                LoqBot
+              </p>
+              <span className="px-1.5 py-0.5 bg-blue-600 text-white text-[10px] font-bold rounded-full leading-none">NEW</span>
+            </div>
+            {solutionsMenu[2].items.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
                 className="block py-2 text-sm text-white/70 hover:text-white"
               >
                 {item.label}
