@@ -10,7 +10,7 @@ export interface StatItem {
 
 export interface FeaturePage {
   slug: string;
-  product: "LoqHRMS" | "LoqTalent" | "LoqBot";
+  product: "LoqHRMS" | "LoqTalent" | "LoqBot" | "Loq Custom Solutions";
   productSlug: string;
   title: string;
   tagline: string;
@@ -502,6 +502,136 @@ export const featurePages: FeaturePage[] = [
       { value: "14 days", label: "Average time to launch" },
     ],
     mockupType: "loqbot-custom",
+  },
+  {
+    slug: "custom-web-apps",
+    product: "Loq Custom Solutions",
+    productSlug: "custom",
+    title: "Custom Web Apps",
+    tagline: "Your vision. Our engineering. Built to last.",
+    description:
+      "We design and build bespoke web applications tailored exactly to your business requirements — from internal tools and client portals to full-scale SaaS platforms.",
+    heroDescription:
+      "No off-the-shelf compromises. Every line of code is written for your specific workflows, your users, and your growth trajectory.",
+    accentColor: "purple",
+    features: [
+      { title: "Requirements Discovery", description: "We start with deep discovery sessions to map your exact requirements, user journeys, and business logic before writing a single line of code." },
+      { title: "UI/UX Design", description: "Custom design systems crafted by experienced designers — visually polished, accessible, and aligned with your brand identity." },
+      { title: "Scalable Architecture", description: "Built on proven, scalable architectures so your platform grows with your business — from 100 to 100,000 users without breaking." },
+      { title: "Agile Delivery", description: "We deliver in sprints with regular demos, so you see progress every 2 weeks and can provide feedback continuously." },
+      { title: "QA & Testing", description: "Rigorous automated and manual testing ensures your product is stable, secure, and bug-free before it ever reaches your users." },
+      { title: "Ongoing Support", description: "Post-launch support, maintenance, and feature development — we're your long-term technology partner, not just a vendor." },
+    ],
+    stats: [
+      { value: "50+", label: "Custom apps delivered" },
+      { value: "2 wks", label: "Sprint delivery cadence" },
+      { value: "99.9%", label: "Uptime SLA" },
+    ],
+    mockupType: "custom-web-apps",
+  },
+  {
+    slug: "mobile-development",
+    product: "Loq Custom Solutions",
+    productSlug: "custom",
+    title: "Mobile Development",
+    tagline: "iOS & Android apps that people actually love using.",
+    description:
+      "We build high-performance native and cross-platform mobile apps — from MVPs to enterprise-grade solutions — with polished UX that drives engagement and retention.",
+    heroDescription:
+      "Whether you need a consumer app or an internal mobile tool, our team delivers mobile experiences that are fast, intuitive, and built to scale.",
+    accentColor: "purple",
+    features: [
+      { title: "Cross-Platform Development", description: "We build for iOS and Android simultaneously using React Native, reducing cost and time without sacrificing performance." },
+      { title: "Offline-First Architecture", description: "Apps designed to work without internet connectivity — syncing seamlessly when the connection is restored." },
+      { title: "Push Notifications", description: "Intelligent notification systems that re-engage users at the right moment with personalised, contextual messages." },
+      { title: "App Store Submission", description: "We handle the full App Store and Google Play submission process — compliance, metadata, screenshots, and review management." },
+      { title: "Performance Optimisation", description: "Every app is profiled and optimised for battery life, memory usage, and render performance on a range of devices." },
+      { title: "Analytics Integration", description: "Built-in analytics from day one — track feature usage, funnels, and user behaviour to continuously improve the product." },
+    ],
+    stats: [
+      { value: "30+", label: "Apps launched" },
+      { value: "4.8★", label: "Average app store rating" },
+      { value: "2×", label: "Faster than native builds" },
+    ],
+    mockupType: "mobile-development",
+  },
+  {
+    slug: "api-integrations",
+    product: "Loq Custom Solutions",
+    productSlug: "custom",
+    title: "API & Integrations",
+    tagline: "Connect your systems. Eliminate data silos. Move faster.",
+    description:
+      "We build custom API layers and integrations that connect your existing tools — ERPs, CRMs, payment gateways, and third-party services — into one seamless data ecosystem.",
+    heroDescription:
+      "Stop copying data between systems manually. Our integration specialists build the connective tissue that makes your entire tech stack work as one.",
+    accentColor: "purple",
+    features: [
+      { title: "REST & GraphQL APIs", description: "Custom API design and development — RESTful services or GraphQL endpoints, built to industry standards and secured by default." },
+      { title: "Third-Party Integrations", description: "We connect your systems to Salesforce, HubSpot, SAP, Xero, Stripe, and hundreds of other platforms via official and custom integrations." },
+      { title: "Webhook Architecture", description: "Real-time event-driven systems using webhooks — so your tools react instantly when something changes anywhere in your stack." },
+      { title: "Data Transformation", description: "Custom ETL pipelines that clean, transform, and route data between systems in the exact format each platform needs." },
+      { title: "API Gateway & Security", description: "Rate limiting, authentication, and API key management — your integrations are secure, monitored, and production-ready." },
+      { title: "Monitoring & Alerting", description: "24/7 monitoring of all integration endpoints with instant alerts when something fails — before your users notice." },
+    ],
+    stats: [
+      { value: "100+", label: "APIs & integrations built" },
+      { value: "<50ms", label: "Average API response time" },
+      { value: "99.95%", label: "Integration uptime" },
+    ],
+    mockupType: "api-integrations",
+  },
+  {
+    slug: "business-intelligence",
+    product: "Loq Custom Solutions",
+    productSlug: "custom",
+    title: "Business Intelligence",
+    tagline: "Turn your data into decisions. At scale.",
+    description:
+      "We build custom BI solutions — from data warehouses and ETL pipelines to executive dashboards and predictive analytics — that give your leadership team the clarity to act with confidence.",
+    heroDescription:
+      "Stop guessing. We transform raw business data into real-time insights, custom dashboards, and predictive models that drive smarter decisions every day.",
+    accentColor: "purple",
+    features: [
+      { title: "Data Warehouse Setup", description: "We architect and implement your cloud data warehouse — Snowflake, BigQuery, or Redshift — designed for performance and cost efficiency." },
+      { title: "ETL Pipelines", description: "Automated pipelines that extract data from all your sources, transform it consistently, and load it into your warehouse on schedule." },
+      { title: "Executive Dashboards", description: "Custom dashboards that surface the KPIs that matter most to your leadership team — live, drill-downable, and beautifully presented." },
+      { title: "Self-Service Analytics", description: "Empower your teams to explore data independently with governed self-service tools — no SQL required." },
+      { title: "Predictive Analytics", description: "Machine learning models that forecast demand, churn, revenue, and more — built on your own historical data." },
+      { title: "Data Governance", description: "Data cataloguing, lineage tracking, and quality controls ensure your insights are always accurate and trustworthy." },
+    ],
+    stats: [
+      { value: "10×", label: "Faster reporting cycles" },
+      { value: "40%", label: "Average cost reduction vs. manual" },
+      { value: "Real-time", label: "Dashboard refresh rate" },
+    ],
+    mockupType: "business-intelligence",
+  },
+  {
+    slug: "digital-consulting",
+    product: "Loq Custom Solutions",
+    productSlug: "custom",
+    title: "Digital Consulting",
+    tagline: "Clarity before code. Strategy before spend.",
+    description:
+      "Before you build, know exactly what to build. Our consulting team helps you define your digital strategy, choose the right technology stack, and create a clear roadmap to execution.",
+    heroDescription:
+      "We've helped dozens of founders and executives avoid expensive mistakes by getting the architecture, priorities, and technology choices right from day one.",
+    accentColor: "purple",
+    features: [
+      { title: "Technical Discovery", description: "Deep-dive workshops with your team to document requirements, map user journeys, and define the full scope of your digital initiative." },
+      { title: "Architecture Design", description: "A clear, documented technical architecture — system design, data models, API contracts, and infrastructure blueprint — before development begins." },
+      { title: "Tech Stack Advisory", description: "Unbiased recommendations on the right technologies for your specific context — budget, scale, team, and long-term flexibility." },
+      { title: "Build vs. Buy Analysis", description: "Objective evaluation of whether to build custom, buy off-the-shelf, or integrate existing tools — with a full cost and risk comparison." },
+      { title: "Delivery Roadmap", description: "A phased, prioritised delivery roadmap that gets you to market faster and de-risks the development journey." },
+      { title: "Vendor Selection", description: "If you're evaluating vendors or agencies, we help you define criteria, run RFPs, and assess proposals with expert eyes." },
+    ],
+    stats: [
+      { value: "60+", label: "Consulting engagements" },
+      { value: "3 wks", label: "Typical discovery timeline" },
+      { value: "100%", label: "Clients who say it was worth it" },
+    ],
+    mockupType: "digital-consulting",
   },
 ];
 

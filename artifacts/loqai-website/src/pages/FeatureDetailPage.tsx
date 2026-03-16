@@ -12,12 +12,18 @@ import ATSMockup from "@/components/mockups/ATSMockup";
 import ScreenerMockup from "@/components/mockups/ScreenerMockup";
 import TalentMockup from "@/components/mockups/TalentMockup";
 import LoqBotMockup from "@/components/mockups/LoqBotMockup";
+import CustomSolutionsMockup from "@/components/mockups/CustomSolutionsMockup";
 
 function LoqBotHotel() { return <LoqBotMockup variant="loqbot-hotel" />; }
 function LoqBotRestaurant() { return <LoqBotMockup variant="loqbot-restaurant" />; }
 function LoqBotEcommerce() { return <LoqBotMockup variant="loqbot-ecommerce" />; }
 function LoqBotRealEstate() { return <LoqBotMockup variant="loqbot-realestate" />; }
 function LoqBotCustom() { return <LoqBotMockup variant="default" />; }
+function CustomWebApps() { return <CustomSolutionsMockup variant="custom-web-apps" />; }
+function CustomMobile() { return <CustomSolutionsMockup variant="mobile-development" />; }
+function CustomAPI() { return <CustomSolutionsMockup variant="api-integrations" />; }
+function CustomBI() { return <CustomSolutionsMockup variant="business-intelligence" />; }
+function CustomConsulting() { return <CustomSolutionsMockup variant="digital-consulting" />; }
 
 const mockupComponents: Record<string, React.ComponentType> = {
   attendance: AttendanceMockup,
@@ -32,6 +38,11 @@ const mockupComponents: Record<string, React.ComponentType> = {
   "loqbot-ecommerce": LoqBotEcommerce,
   "loqbot-realestate": LoqBotRealEstate,
   "loqbot-custom": LoqBotCustom,
+  "custom-web-apps": CustomWebApps,
+  "mobile-development": CustomMobile,
+  "api-integrations": CustomAPI,
+  "business-intelligence": CustomBI,
+  "digital-consulting": CustomConsulting,
 };
 
 interface Props {

@@ -35,6 +35,18 @@ const solutionsMenu = [
       { label: "Custom Chatbot", desc: "Built for your exact needs", href: "/solutions/loqbot/custom-chatbot" },
     ],
   },
+  {
+    product: "Loq Custom Solutions",
+    description: "Tailored software built for you",
+    isNew: false,
+    items: [
+      { label: "Custom Web Apps", desc: "Bespoke platforms built from scratch", href: "/solutions/custom/custom-web-apps" },
+      { label: "Mobile Development", desc: "iOS & Android apps, expertly crafted", href: "/solutions/custom/mobile-development" },
+      { label: "API & Integrations", desc: "Connect your tools seamlessly", href: "/solutions/custom/api-integrations" },
+      { label: "Business Intelligence", desc: "Dashboards & data that drive decisions", href: "/solutions/custom/business-intelligence" },
+      { label: "Digital Consulting", desc: "Strategy, architecture & roadmapping", href: "/solutions/custom/digital-consulting" },
+    ],
+  },
 ];
 
 const resourcesMenu = [
@@ -98,7 +110,7 @@ export default function Navbar() {
                 />
               </button>
               {activeMenu === "solutions" && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[860px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-3 gap-4">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[820px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-x-6 gap-y-5">
                   {solutionsMenu.map((product) => (
                     <div key={product.product}>
                       <div className="mb-3">
@@ -229,6 +241,19 @@ export default function Navbar() {
               <span className="px-1.5 py-0.5 bg-blue-600 text-white text-[10px] font-bold rounded-full leading-none">NEW</span>
             </div>
             {solutionsMenu[2].items.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-2 text-sm text-white/70 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+            <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2 mt-3">
+              Loq Custom Solutions
+            </p>
+            {solutionsMenu[3].items.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
