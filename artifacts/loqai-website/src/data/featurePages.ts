@@ -530,41 +530,15 @@ export const featurePages: FeaturePage[] = [
     mockupType: "custom-web-apps",
   },
   {
-    slug: "mobile-development",
-    product: "Loq Custom Solutions",
-    productSlug: "custom",
-    title: "Mobile Development",
-    tagline: "iOS & Android apps that people actually love using.",
-    description:
-      "We build high-performance native and cross-platform mobile apps — from MVPs to enterprise-grade solutions — with polished UX that drives engagement and retention.",
-    heroDescription:
-      "Whether you need a consumer app or an internal mobile tool, our team delivers mobile experiences that are fast, intuitive, and built to scale.",
-    accentColor: "purple",
-    features: [
-      { title: "Cross-Platform Development", description: "We build for iOS and Android simultaneously using React Native, reducing cost and time without sacrificing performance." },
-      { title: "Offline-First Architecture", description: "Apps designed to work without internet connectivity — syncing seamlessly when the connection is restored." },
-      { title: "Push Notifications", description: "Intelligent notification systems that re-engage users at the right moment with personalised, contextual messages." },
-      { title: "App Store Submission", description: "We handle the full App Store and Google Play submission process — compliance, metadata, screenshots, and review management." },
-      { title: "Performance Optimisation", description: "Every app is profiled and optimised for battery life, memory usage, and render performance on a range of devices." },
-      { title: "Analytics Integration", description: "Built-in analytics from day one — track feature usage, funnels, and user behaviour to continuously improve the product." },
-    ],
-    stats: [
-      { value: "30+", label: "Apps launched" },
-      { value: "4.8★", label: "Average app store rating" },
-      { value: "2×", label: "Faster than native builds" },
-    ],
-    mockupType: "mobile-development",
-  },
-  {
     slug: "api-integrations",
     product: "Loq Custom Solutions",
     productSlug: "custom",
-    title: "API & Integrations",
-    tagline: "Connect your systems. Eliminate data silos. Move faster.",
+    title: "AI Integrations",
+    tagline: "Connect your systems. Power them with AI.",
     description:
-      "We build custom API layers and integrations that connect your existing tools — ERPs, CRMs, payment gateways, and third-party services — into one seamless data ecosystem.",
+      "We build AI-powered integration layers that connect your tools — ERPs, CRMs, payment gateways, and third-party services — into one intelligent, automated ecosystem.",
     heroDescription:
-      "Stop copying data between systems manually. Our integration specialists build the connective tissue that makes your entire tech stack work as one.",
+      "Stop copying data between systems manually. Our AI integration specialists build the connective tissue that makes your entire tech stack work as one intelligent unit.",
     accentColor: "purple",
     features: [
       { title: "REST & GraphQL APIs", description: "Custom API design and development — RESTful services or GraphQL endpoints, built to industry standards and secured by default." },
@@ -606,32 +580,6 @@ export const featurePages: FeaturePage[] = [
       { value: "Real-time", label: "Dashboard refresh rate" },
     ],
     mockupType: "business-intelligence",
-  },
-  {
-    slug: "digital-consulting",
-    product: "Loq Custom Solutions",
-    productSlug: "custom",
-    title: "Digital Consulting",
-    tagline: "Clarity before code. Strategy before spend.",
-    description:
-      "Before you build, know exactly what to build. Our consulting team helps you define your digital strategy, choose the right technology stack, and create a clear roadmap to execution.",
-    heroDescription:
-      "We've helped dozens of founders and executives avoid expensive mistakes by getting the architecture, priorities, and technology choices right from day one.",
-    accentColor: "purple",
-    features: [
-      { title: "Technical Discovery", description: "Deep-dive workshops with your team to document requirements, map user journeys, and define the full scope of your digital initiative." },
-      { title: "Architecture Design", description: "A clear, documented technical architecture — system design, data models, API contracts, and infrastructure blueprint — before development begins." },
-      { title: "Tech Stack Advisory", description: "Unbiased recommendations on the right technologies for your specific context — budget, scale, team, and long-term flexibility." },
-      { title: "Build vs. Buy Analysis", description: "Objective evaluation of whether to build custom, buy off-the-shelf, or integrate existing tools — with a full cost and risk comparison." },
-      { title: "Delivery Roadmap", description: "A phased, prioritised delivery roadmap that gets you to market faster and de-risks the development journey." },
-      { title: "Vendor Selection", description: "If you're evaluating vendors or agencies, we help you define criteria, run RFPs, and assess proposals with expert eyes." },
-    ],
-    stats: [
-      { value: "60+", label: "Consulting engagements" },
-      { value: "3 wks", label: "Typical discovery timeline" },
-      { value: "100%", label: "Clients who say it was worth it" },
-    ],
-    mockupType: "digital-consulting",
   },
 ];
 

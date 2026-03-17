@@ -41,10 +41,8 @@ const solutionsMenu = [
     isNew: false,
     items: [
       { label: "Custom Web Apps", desc: "Bespoke platforms built from scratch", href: "/solutions/custom/custom-web-apps" },
-      { label: "Mobile Development", desc: "iOS & Android apps, expertly crafted", href: "/solutions/custom/mobile-development" },
-      { label: "API & Integrations", desc: "Connect your tools seamlessly", href: "/solutions/custom/api-integrations" },
+      { label: "AI Integrations", desc: "Connect your tools with AI power", href: "/solutions/custom/api-integrations" },
       { label: "Business Intelligence", desc: "Dashboards & data that drive decisions", href: "/solutions/custom/business-intelligence" },
-      { label: "Digital Consulting", desc: "Strategy, architecture & roadmapping", href: "/solutions/custom/digital-consulting" },
     ],
   },
 ];

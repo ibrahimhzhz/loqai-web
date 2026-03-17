@@ -61,17 +61,11 @@ function Router() {
       <Route path="/solutions/custom/custom-web-apps">
         <FeatureDetailPage slug="custom-web-apps" />
       </Route>
-      <Route path="/solutions/custom/mobile-development">
-        <FeatureDetailPage slug="mobile-development" />
-      </Route>
       <Route path="/solutions/custom/api-integrations">
         <FeatureDetailPage slug="api-integrations" />
       </Route>
       <Route path="/solutions/custom/business-intelligence">
         <FeatureDetailPage slug="business-intelligence" />
-      </Route>
-      <Route path="/solutions/custom/digital-consulting">
-        <FeatureDetailPage slug="digital-consulting" />
       </Route>
 
       <Route component={NotFound} />
