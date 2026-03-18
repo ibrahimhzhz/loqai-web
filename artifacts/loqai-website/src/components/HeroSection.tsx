@@ -12,8 +12,8 @@ export default function HeroSection() {
       <div className="relative z-10 min-h-screen flex items-center justify-center pt-16">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.05] text-gray-900">
-            Trusted by{" "}
-            <span className="gradient-text">400+ Founders</span>
+            The only HR platform{" "}
+            <span className="gradient-text">you'll ever need</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
