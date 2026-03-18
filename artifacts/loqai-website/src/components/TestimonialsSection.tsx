@@ -59,18 +59,18 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.05)_0%,transparent_60%)]" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
+          <p className="text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
             Customer stories
           </p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Trusted by{" "}
             <span className="gradient-text">HR leaders</span>
           </h2>
-          <p className="text-white/50 max-w-lg mx-auto">
+          <p className="text-gray-500 max-w-lg mx-auto">
             Companies across Africa and beyond use LoqAI to transform how they
             manage people and find talent.
           </p>
@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
           {testimonials.map((t) => (
             <div
               key={t.author}
-              className="bg-zinc-900/60 border border-white/8 rounded-2xl p-6 hover:border-purple-500/20 transition-all duration-300 flex flex-col"
+              className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-purple-300 hover:shadow-md transition-all duration-300 flex flex-col"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -91,18 +91,18 @@ export default function TestimonialsSection() {
                   />
                 ))}
               </div>
-              <blockquote className="text-white/65 text-sm leading-relaxed mb-6 flex-1">
+              <blockquote className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
                 "{t.quote}"
               </blockquote>
-              <div className="flex items-center gap-3 pt-4 border-t border-white/8">
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                 <div
                   className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-xs font-bold text-white flex-shrink-0`}
                 >
                   {t.avatar}
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium">{t.author}</p>
-                  <p className="text-white/40 text-xs">
+                  <p className="text-gray-900 text-sm font-medium">{t.author}</p>
+                  <p className="text-gray-400 text-xs">
                     {t.role} · {t.company}
                   </p>
                 </div>

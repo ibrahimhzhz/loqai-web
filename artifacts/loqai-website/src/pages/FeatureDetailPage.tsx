@@ -58,10 +58,10 @@ export default function FeatureDetailPage({ slug }: Props) {
   const gradientClass = isBlue
     ? "from-blue-600 to-cyan-600"
     : "from-purple-600 to-violet-600";
-  const accentTextClass = isBlue ? "text-blue-400" : "text-purple-400";
-  const accentBgClass = isBlue ? "bg-blue-500/15 text-blue-400" : "bg-purple-500/15 text-purple-400";
-  const glowClass = isBlue ? "bg-blue-600/20" : "bg-purple-600/20";
-  const borderHighlight = isBlue ? "border-blue-500/30" : "border-purple-500/30";
+  const accentTextClass = isBlue ? "text-blue-600" : "text-purple-600";
+  const accentBgClass = isBlue ? "bg-blue-100 text-blue-700" : "bg-purple-100 text-purple-700";
+  const glowClass = isBlue ? "bg-blue-300/30" : "bg-purple-300/30";
+  const borderHighlight = isBlue ? "border-blue-300" : "border-purple-300";
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -69,19 +69,19 @@ export default function FeatureDetailPage({ slug }: Props) {
 
       <main className="pt-20">
         {/* Breadcrumb */}
-        <div className="bg-zinc-950 border-b border-white/5 py-3">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center gap-2 text-xs text-white/35">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
+        <div className="bg-gray-50 border-b border-gray-100 py-3">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center gap-2 text-xs text-gray-400">
+            <a href="/" className="hover:text-gray-700 transition-colors">Home</a>
             <ChevronRight size={12} />
-            <a href="/" className="hover:text-white transition-colors">{page.product}</a>
+            <a href="/" className="hover:text-gray-700 transition-colors">{page.product}</a>
             <ChevronRight size={12} />
-            <span className="text-white/60">{page.title}</span>
+            <span className="text-gray-600">{page.title}</span>
           </div>
         </div>
 
         {/* Hero */}
-        <section className="py-20 bg-black relative overflow-hidden">
-          <div className={`absolute inset-0 ${isBlue ? "bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.1)_0%,transparent_60%)]" : "bg-[radial-gradient(ellipse_at_top_left,rgba(139,92,246,0.1)_0%,transparent_60%)]"}`} />
+        <section className="py-20 bg-white relative overflow-hidden">
+          <div className={`absolute inset-0 ${isBlue ? "bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.06)_0%,transparent_60%)]" : "bg-[radial-gradient(ellipse_at_top_left,rgba(139,92,246,0.06)_0%,transparent_60%)]"}`} />
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <div>
@@ -89,16 +89,16 @@ export default function FeatureDetailPage({ slug }: Props) {
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${accentBgClass}`}>
                     {page.productSlug === "loqbot" ? "LoqBot" : page.product}
                   </span>
-                  <ChevronRight size={12} className="text-white/20" />
-                  <span className="text-xs text-white/35">{page.title}</span>
+                  <ChevronRight size={12} className="text-gray-300" />
+                  <span className="text-xs text-gray-400">{page.title}</span>
                 </div>
-                <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                   {page.title}
                 </h1>
                 <p className={`text-lg font-medium mb-4 ${accentTextClass}`}>
                   {page.tagline}
                 </p>
-                <p className="text-white/50 leading-relaxed mb-8 text-base">
+                <p className="text-gray-500 leading-relaxed mb-8 text-base">
                   {page.description}
                 </p>
                 <div className="flex gap-3">
@@ -111,7 +111,7 @@ export default function FeatureDetailPage({ slug }: Props) {
                   </a>
                   <a
                     href="#"
-                    className="flex items-center gap-2 px-6 py-3 border border-white/15 text-white/70 hover:text-white hover:border-white/25 font-medium rounded-xl transition-colors text-sm"
+                    className="flex items-center gap-2 px-6 py-3 border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 hover:bg-gray-50 font-medium rounded-xl transition-colors text-sm"
                   >
                     Book a Demo
                   </a>
@@ -120,33 +120,33 @@ export default function FeatureDetailPage({ slug }: Props) {
                 <div className="flex gap-6 mt-10">
                   {page.stats.map((stat) => (
                     <div key={stat.label}>
-                      <p className={`text-2xl font-bold ${isBlue ? "text-blue-400" : "text-purple-400"}`}>
+                      <p className={`text-2xl font-bold ${accentTextClass}`}>
                         {stat.value}
                       </p>
-                      <p className="text-xs text-white/40 mt-0.5">{stat.label}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{stat.label}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="relative">
-                <div className="bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden shadow-xl">
                   <MockupComponent />
                 </div>
-                <div className={`absolute -inset-6 blur-3xl -z-10 opacity-15 rounded-3xl ${glowClass}`} />
+                <div className={`absolute -inset-6 blur-3xl -z-10 opacity-40 rounded-3xl ${glowClass}`} />
               </div>
             </div>
           </div>
         </section>
 
         {/* Features Grid */}
-        <section className="py-20 bg-zinc-950 relative">
+        <section className="py-20 bg-gray-50 relative">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${accentTextClass}`}>
                 Everything included
               </p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
                 What {page.title} can do
               </h2>
             </div>
@@ -155,13 +155,13 @@ export default function FeatureDetailPage({ slug }: Props) {
               {page.features.map((feature) => (
                 <div
                   key={feature.title}
-                  className={`bg-zinc-900/60 border border-white/8 rounded-2xl p-6 hover:${borderHighlight} transition-all duration-300`}
+                  className={`bg-white border border-gray-200 rounded-2xl p-6 hover:border-purple-300 hover:shadow-md transition-all duration-300`}
                 >
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-4 ${accentBgClass}`}>
                     <Check size={14} />
                   </div>
-                  <h3 className="text-white font-semibold mb-2 text-sm">{feature.title}</h3>
-                  <p className="text-white/45 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="text-gray-900 font-semibold mb-2 text-sm">{feature.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -169,27 +169,27 @@ export default function FeatureDetailPage({ slug }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-black relative overflow-hidden">
-          <div className={`absolute inset-0 ${isBlue ? "bg-gradient-to-br from-blue-950/25 via-transparent to-cyan-950/15" : "bg-gradient-to-br from-purple-950/25 via-transparent to-violet-950/15"}`} />
+        <section className="py-20 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-blue-50" />
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Ready to get started with{" "}
-              <span className={`${isBlue ? "text-blue-400" : "text-purple-400"}`}>{page.title}?</span>
+              <span className={accentTextClass}>{page.title}?</span>
             </h2>
-            <p className="text-white/50 mb-8">
+            <p className="text-gray-500 mb-8">
               Join hundreds of companies already using LoqAI to streamline their HR operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#"
-                className={`flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r ${gradientClass} text-white font-medium rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg`}
+                className={`flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r ${gradientClass} text-white font-medium rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-purple-200`}
               >
                 Start Free Trial
                 <ArrowRight size={15} />
               </a>
               <a
                 href="/pricing"
-                className="flex items-center justify-center px-8 py-3.5 border border-white/15 text-white/70 hover:text-white hover:border-white/25 font-medium rounded-xl transition-colors text-sm"
+                className="flex items-center justify-center px-8 py-3.5 border border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 font-medium rounded-xl transition-colors text-sm"
               >
                 View Pricing
               </a>

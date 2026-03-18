@@ -32,18 +32,18 @@ const founders = [
 
 export default function FoundersSection() {
   return (
-    <section className="py-24 bg-zinc-950 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(139,92,246,0.06)_0%,transparent_60%)]" />
+    <section className="py-24 bg-white relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(139,92,246,0.05)_0%,transparent_60%)]" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
+          <p className="text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
             The team behind LoqAI
           </p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Built by people who{" "}
             <span className="gradient-text">understand HR</span>
           </h2>
-          <p className="text-white/50 max-w-xl mx-auto">
+          <p className="text-gray-500 max-w-xl mx-auto">
             Our founders bring together deep expertise in HR, artificial
             intelligence, and enterprise software — united by a shared mission
             to modernise the way organisations manage their people.
@@ -54,13 +54,13 @@ export default function FoundersSection() {
           {founders.map((founder) => (
             <div
               key={founder.name}
-              className="group bg-zinc-900/60 border border-white/8 rounded-2xl overflow-hidden hover:border-purple-500/25 transition-all duration-300"
+              className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all duration-300"
             >
               <div className={`relative h-56 bg-gradient-to-br ${founder.gradient} overflow-hidden`}>
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-90 transition-opacity duration-300"
+                  className="w-full h-full object-cover opacity-85 group-hover:opacity-95 transition-opacity duration-300"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.style.display = "none";
@@ -73,17 +73,17 @@ export default function FoundersSection() {
                 >
                   {founder.initials}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
               </div>
 
               <div className="p-6">
-                <h3 className="text-white font-bold text-lg mb-0.5">
+                <h3 className="text-gray-900 font-bold text-lg mb-0.5">
                   {founder.name}
                 </h3>
-                <p className="text-purple-400 text-sm font-medium mb-4">
+                <p className="text-purple-600 text-sm font-medium mb-4">
                   {founder.role}
                 </p>
-                <p className="text-white/50 text-sm leading-relaxed mb-5">
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">
                   {founder.bio}
                 </p>
 
@@ -91,7 +91,7 @@ export default function FoundersSection() {
                   {founder.expertise.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 bg-white/5 border border-white/10 text-white/50 text-xs rounded-lg"
+                      className="px-2.5 py-1 bg-purple-50 border border-purple-100 text-purple-700 text-xs rounded-lg"
                     >
                       {tag}
                     </span>
@@ -101,14 +101,14 @@ export default function FoundersSection() {
                 <div className="flex gap-3">
                   <a
                     href="#"
-                    className="text-white/30 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-gray-700 transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin size={16} />
                   </a>
                   <a
                     href="#"
-                    className="text-white/30 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-gray-700 transition-colors"
                     aria-label="Twitter"
                   >
                     <Twitter size={16} />

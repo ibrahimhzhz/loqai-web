@@ -84,8 +84,8 @@ export default function Navbar() {
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/90 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
+          : "bg-white/80 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -99,7 +99,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => toggle("solutions")}
-                className="flex items-center gap-1.5 px-4 py-2 text-sm text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className="flex items-center gap-1.5 px-4 py-2 text-sm text-gray-700 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
               >
                 Solutions
                 <ChevronDown
@@ -108,12 +108,12 @@ export default function Navbar() {
                 />
               </button>
               {activeMenu === "solutions" && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[820px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-x-6 gap-y-5">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[820px] bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-100/80 p-4 grid grid-cols-2 gap-x-6 gap-y-5">
                   {solutionsMenu.map((product) => (
                     <div key={product.product}>
                       <div className="mb-3">
                         <div className="flex items-center gap-2">
-                          <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider">
+                          <p className="text-xs font-semibold text-purple-600 uppercase tracking-wider">
                             {product.product}
                           </p>
                           {product.isNew && (
@@ -122,7 +122,7 @@ export default function Navbar() {
                             </span>
                           )}
                         </div>
-                        <p className="text-xs text-white/40 mt-0.5">{product.description}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">{product.description}</p>
                       </div>
                       <div className="space-y-1">
                         {product.items.map((item) => (
@@ -130,12 +130,12 @@ export default function Navbar() {
                             key={item.label}
                             href={item.href}
                             onClick={() => setActiveMenu(null)}
-                            className="flex flex-col px-3 py-2 rounded-lg hover:bg-white/5 transition-colors group"
+                            className="flex flex-col px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors group"
                           >
-                            <span className="text-sm text-white/80 group-hover:text-white transition-colors">
+                            <span className="text-sm text-gray-700 group-hover:text-purple-700 transition-colors">
                               {item.label}
                             </span>
-                            <span className="text-xs text-white/40">{item.desc}</span>
+                            <span className="text-xs text-gray-400">{item.desc}</span>
                           </a>
                         ))}
                       </div>
@@ -147,7 +147,7 @@ export default function Navbar() {
 
             <a
               href="/pricing"
-              className="px-4 py-2 text-sm text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
             >
               Pricing
             </a>
@@ -156,7 +156,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => toggle("resources")}
-                className="flex items-center gap-1.5 px-4 py-2 text-sm text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className="flex items-center gap-1.5 px-4 py-2 text-sm text-gray-700 hover:text-gray-900 transition-colors rounded-lg hover:bg-gray-50"
               >
                 Resources
                 <ChevronDown
@@ -165,17 +165,18 @@ export default function Navbar() {
                 />
               </button>
               {activeMenu === "resources" && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl p-3">
+                <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-gray-100/80 p-2">
                   {resourcesMenu.map((item) => (
                     <a
                       key={item.label}
                       href="#"
-                      className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors group"
+                      onClick={() => setActiveMenu(null)}
+                      className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-purple-50 transition-colors group"
                     >
-                      <span className="text-sm text-white/80 group-hover:text-white transition-colors">
+                      <span className="text-sm text-gray-700 group-hover:text-purple-700 transition-colors">
                         {item.label}
                       </span>
-                      <span className="text-xs text-white/40">{item.desc}</span>
+                      <span className="text-xs text-gray-400">{item.desc}</span>
                     </a>
                   ))}
                 </div>
@@ -184,19 +185,19 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="#" className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors">
+            <a href="#" className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors">
               Log in
             </a>
             <a
               href="#"
-              className="px-5 py-2 text-sm font-medium bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-purple-900/30"
+              className="px-5 py-2 text-sm font-medium bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:opacity-90 transition-opacity shadow-md shadow-purple-200"
             >
               Get Started
             </a>
           </div>
 
           <button
-            className="lg:hidden text-white/80 hover:text-white"
+            className="lg:hidden text-gray-700 hover:text-gray-900"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -206,34 +207,34 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-zinc-950 border-t border-white/10 px-6 py-4 space-y-4">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
           <div>
-            <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
+            <p className="text-xs font-semibold text-purple-600 uppercase tracking-wider mb-2">
               LoqHRMS
             </p>
             {solutionsMenu[0].items.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-2 text-sm text-white/70 hover:text-white"
+                className="block py-2 text-sm text-gray-600 hover:text-gray-900"
               >
                 {item.label}
               </a>
             ))}
-            <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2 mt-3">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2 mt-3">
               LoqTalent
             </p>
             {solutionsMenu[1].items.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-2 text-sm text-white/70 hover:text-white"
+                className="block py-2 text-sm text-gray-600 hover:text-gray-900"
               >
                 {item.label}
               </a>
             ))}
             <div className="flex items-center gap-2 mt-3 mb-2">
-              <p className="text-xs font-semibold text-blue-400 uppercase tracking-wider">
+              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
                 LoqBot
               </p>
               <span className="px-1.5 py-0.5 bg-blue-600 text-white text-[10px] font-bold rounded-full leading-none">NEW</span>
@@ -243,12 +244,12 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm text-white/70 hover:text-white"
+                className="block py-2 text-sm text-gray-600 hover:text-gray-900"
               >
                 {item.label}
               </a>
             ))}
-            <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2 mt-3">
+            <p className="text-xs font-semibold text-purple-600 uppercase tracking-wider mb-2 mt-3">
               Loq Custom Solutions
             </p>
             {solutionsMenu[3].items.map((item) => (
@@ -256,32 +257,32 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm text-white/70 hover:text-white"
+                className="block py-2 text-sm text-gray-600 hover:text-gray-900"
               >
                 {item.label}
               </a>
             ))}
           </div>
           <div>
-            <a href="/pricing" className="block py-2 text-sm text-white/70 hover:text-white">
+            <a href="/pricing" className="block py-2 text-sm text-gray-600 hover:text-gray-900">
               Pricing
             </a>
           </div>
           <div>
-            <p className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
+            <p className="text-xs font-semibold text-purple-600 uppercase tracking-wider mb-2">
               Resources
             </p>
             {resourcesMenu.map((item) => (
-              <a key={item.label} href="#" className="block py-2 text-sm text-white/70 hover:text-white">
+              <a key={item.label} href="#" className="block py-2 text-sm text-gray-600 hover:text-gray-900">
                 {item.label}
               </a>
             ))}
           </div>
-          <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
-            <a href="#" className="text-sm text-white/70 hover:text-white">Log in</a>
+          <div className="pt-2 border-t border-gray-100 flex flex-col gap-3">
+            <a href="#" className="text-sm text-gray-600 hover:text-gray-900">Log in</a>
             <a
               href="#"
-              className="w-full text-center px-5 py-2.5 text-sm font-medium bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg"
+              className="px-5 py-2.5 text-sm font-medium bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg text-center"
             >
               Get Started
             </a>
