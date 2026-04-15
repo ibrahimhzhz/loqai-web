@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WhyLoqAISection from "@/components/WhyLoqAISection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+// import TestimonialsSection from "@/components/TestimonialsSection";
 import FoundersSection from "@/components/FoundersSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -133,9 +133,11 @@ export default function LandingPage() {
           <WhyLoqAISection />
         </ScrollReveal>
 
+        {/*
         <ScrollReveal>
           <TestimonialsSection />
         </ScrollReveal>
+        */}
         <ScrollReveal>
           <FoundersSection />
         </ScrollReveal>
