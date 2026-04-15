@@ -6,6 +6,16 @@ import NotFound from "@/pages/not-found";
 import LandingPage from "@/pages/LandingPage";
 import PricingPage from "@/pages/PricingPage";
 import FeatureDetailPage from "@/pages/FeatureDetailPage";
+import CareersPage from "@/pages/CareersPage";
+import ContactUsPage from "@/pages/ContactUsPage";
+import HrChecklistPage from "@/pages/HrChecklistPage";
+import BlogPage from "@/pages/BlogPage";
+import TermsAndConditionsPage from "@/pages/TermsAndConditionsPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import GdprPage from "@/pages/GdprPage";
+import RefundPolicyPage from "@/pages/RefundPolicyPage";
+import CookiePolicyPage from "@/pages/CookiePolicyPage";
+import PurchaseFlowPage from "@/pages/PurchaseFlowPage";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +24,18 @@ function Router() {
     <Switch>
       <Route path="/" component={LandingPage} />
       <Route path="/pricing" component={PricingPage} />
+      <Route path="/purchase" component={PurchaseFlowPage} />
+
+      {/* Resources pages */}
+      <Route path="/resources/careers" component={CareersPage} />
+      <Route path="/resources/contact-us" component={ContactUsPage} />
+      <Route path="/resources/hr-checklist" component={HrChecklistPage} />
+      <Route path="/resources/blog" component={BlogPage} />
+      <Route path="/resources/terms-and-conditions" component={TermsAndConditionsPage} />
+      <Route path="/resources/privacy-policy" component={PrivacyPolicyPage} />
+      <Route path="/resources/gdpr" component={GdprPage} />
+      <Route path="/resources/refund-policy" component={RefundPolicyPage} />
+      <Route path="/resources/cookie-policy" component={CookiePolicyPage} />
 
       {/* LoqHRMS pages */}
       <Route path="/solutions/hrms/attendance-tracking">
@@ -25,19 +47,19 @@ function Router() {
       <Route path="/solutions/hrms/payroll-generation">
         <FeatureDetailPage slug="payroll-generation" />
       </Route>
+      <Route path="/solutions/hrms/expense-management">
+        <FeatureDetailPage slug="expense-management" />
+      </Route>
       <Route path="/solutions/hrms/employee-records">
         <FeatureDetailPage slug="employee-records" />
       </Route>
 
-      {/* LoqTalent pages */}
+      {/* LoqHire pages */}
       <Route path="/solutions/talent/ats">
         <FeatureDetailPage slug="ats" />
       </Route>
       <Route path="/solutions/talent/ai-resume-screener">
         <FeatureDetailPage slug="ai-resume-screener" />
-      </Route>
-      <Route path="/solutions/talent/talent-acquisition">
-        <FeatureDetailPage slug="talent-acquisition" />
       </Route>
 
       {/* LoqBot pages */}

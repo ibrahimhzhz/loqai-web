@@ -1,114 +1,58 @@
-import { Star } from "lucide-react";
-
-const testimonials = [
-  {
-    quote:
-      "LoqAI's AI resume screener cut our time-to-hire by 60%. We now only interview candidates who are actually qualified — what a difference.",
-    author: "Abena Owusu",
-    role: "Head of Talent",
-    company: "Accra Tech Solutions",
-    avatar: "AO",
-    gradient: "from-purple-500 to-violet-600",
-  },
-  {
-    quote:
-      "We replaced three separate HR tools with LoqHRMS and saved significantly on licensing costs. The payroll module alone is worth it.",
-    author: "David Mensah",
-    role: "CFO",
-    company: "Meridian Enterprises",
-    avatar: "DM",
-    gradient: "from-blue-500 to-cyan-600",
-  },
-  {
-    quote:
-      "The onboarding was incredibly smooth. Our HR team was fully operational on LoqAI within a week. Exceptional customer support throughout.",
-    author: "Fatima Al-Hassan",
-    role: "HR Director",
-    company: "Nexus Group Africa",
-    avatar: "FA",
-    gradient: "from-violet-500 to-purple-600",
-  },
-  {
-    quote:
-      "LoqTalent helped us build a talent pipeline we never had before. The ATS is intuitive and the AI scoring is remarkably accurate.",
-    author: "Samuel Ofori",
-    role: "People Operations Lead",
-    company: "GreenPath Ventures",
-    avatar: "SO",
-    gradient: "from-indigo-500 to-blue-600",
-  },
-  {
-    quote:
-      "Our compliance headaches are gone. LoqHRMS handles all statutory deductions automatically and generates reports with one click.",
-    author: "Grace Ntiamoah",
-    role: "HR Manager",
-    company: "Stellar Manufacturing",
-    avatar: "GN",
-    gradient: "from-purple-600 to-indigo-600",
-  },
-  {
-    quote:
-      "As a fast-growing startup, we needed an HR solution that could scale. LoqAI grows with us — we've tripled headcount without HR chaos.",
-    author: "Kwame Darko",
-    role: "CEO",
-    company: "Foundry Labs",
-    avatar: "KD",
-    gradient: "from-blue-600 to-violet-600",
-  },
-];
+import { Clock3, PlayCircle } from "lucide-react";
 
 export default function TestimonialsSection() {
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.05)_0%,transparent_60%)]" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">
-            Customer stories
+      <div className="max-w-[96rem] mx-auto px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-14">
+          <p className="text-sm font-semibold text-purple-600 uppercase tracking-widest mb-3">
+            Success stories
           </p>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Trusted by{" "}
-            <span className="gradient-text">HR leaders</span>
+            Real results from{" "}
+            <span className="gradient-text">companies</span>
           </h2>
-          <p className="text-gray-500 max-w-lg mx-auto">
-            Companies across Africa and beyond use LoqAI to transform how they
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Companies across the globe use LoqAI to transform how they
             manage people and find talent.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {testimonials.map((t) => (
-            <div
-              key={t.author}
-              className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-purple-300 hover:shadow-md transition-all duration-300 flex flex-col"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={13}
-                    className="fill-yellow-400 text-yellow-400"
-                  />
-                ))}
+        <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-12 p-7 lg:p-10">
+              <div className="flex items-center gap-2 text-purple-600 mb-4">
+                <PlayCircle size={18} />
+                <p className="text-sm font-semibold uppercase tracking-widest">
+                  Testimonial video slot
+                </p>
               </div>
-              <blockquote className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                "{t.quote}"
-              </blockquote>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div
-                  className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-xs font-bold text-white flex-shrink-0`}
-                >
-                  {t.avatar}
+
+              <div className="relative aspect-video rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.15),transparent_45%)]" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/95 border border-gray-200 flex items-center justify-center shadow-md">
+                    <PlayCircle size={30} className="text-purple-700" />
+                  </div>
                 </div>
-                <div>
-                  <p className="text-gray-900 text-sm font-medium">{t.author}</p>
-                  <p className="text-gray-400 text-xs">
-                    {t.role} · {t.company}
+
+                <div className="absolute left-4 right-4 bottom-4 rounded-xl border border-white/70 bg-white/85 backdrop-blur-sm p-3">
+                  <p className="text-base font-semibold text-gray-900">
+                    Customer testimonial video is currently in editing
                   </p>
+                  <div className="flex items-center gap-2 mt-1.5 text-sm text-gray-500">
+                    <Clock3 size={13} />
+                    Final cut will be added here soon.
+                  </div>
                 </div>
               </div>
+
+              <p className="mt-4 text-base text-gray-500">
+                This section is intentionally video-first so visitors can hear directly from your customers once the recording is ready.
+              </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

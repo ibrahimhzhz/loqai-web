@@ -230,4 +230,145 @@
   .card-glow:hover {
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
   }
+
+  .ambient-orb {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 9999px;
+    filter: blur(58px);
+    opacity: 0.32;
+    pointer-events: none;
+    animation: float-orb 14s ease-in-out infinite;
+  }
+
+  .ambient-orb-purple {
+    top: -8rem;
+    right: -6rem;
+    background: radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.35), rgba(168, 85, 247, 0));
+  }
+
+  .ambient-orb-blue {
+    bottom: -9rem;
+    left: -8rem;
+    background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0));
+  }
+
+  .ambient-orb-delay {
+    animation-delay: -7s;
+  }
+
+  .reveal-card {
+    transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+    will-change: transform;
+  }
+
+  .reveal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+    border-color: rgba(168, 85, 247, 0.28);
+  }
+
+  .spotlight-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(
+      220px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+      rgba(168, 85, 247, 0.14),
+      transparent 58%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+    z-index: 0;
+  }
+
+  .spotlight-card:hover::before,
+  .spotlight-card:focus-within::before {
+    opacity: 1;
+  }
+
+  .spotlight-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .magnetic-button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    will-change: transform;
+  }
+
+  .magnetic-button-shimmer {
+    position: absolute;
+    inset: -160% -20%;
+    background: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.32) 48%,
+      rgba(255, 255, 255, 0) 68%
+    );
+    transform: translateX(-140%) rotate(12deg);
+    transition: transform 0.8s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .magnetic-button:hover .magnetic-button-shimmer,
+  .magnetic-button:focus-visible .magnetic-button-shimmer {
+    transform: translateX(128%) rotate(12deg);
+  }
+
+  @keyframes float-orb {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate3d(0, -18px, 0) scale(1.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ambient-orb {
+      animation: none;
+    }
+
+    .reveal-card {
+      transition: none;
+    }
+
+    .spotlight-card::before {
+      transition: none;
+    }
+
+    .magnetic-button-shimmer {
+      transition: none;
+    }
+
+    .reveal-card:hover {
+      transform: none;
+    }
+
+    .magnetic-button:hover .magnetic-button-shimmer,
+    .magnetic-button:focus-visible .magnetic-button-shimmer {
+      transform: translateX(-140%) rotate(12deg);
+    }
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .spotlight-card::before {
+      display: none;
+    }
+  }
 }

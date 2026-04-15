@@ -10,7 +10,7 @@ export interface StatItem {
 
 export interface FeaturePage {
   slug: string;
-  product: "LoqHRMS" | "LoqTalent" | "LoqBot" | "Loq Custom Solutions";
+  product: "LoqHRMS" | "LoqHire" | "LoqBot" | "Loq Custom Solutions";
   productSlug: string;
   title: string;
   tagline: string;
@@ -174,6 +174,56 @@ export const featurePages: FeaturePage[] = [
     mockupType: "payroll",
   },
   {
+    slug: "expense-management",
+    product: "LoqHRMS",
+    productSlug: "hrms",
+    title: "Expense Management",
+    tagline: "Control claims from allocation to reimbursement.",
+    description:
+      "LoqHRMS Expense Management centralises every expense workflow in one place, from claim setup and policy allocation to payroll inclusion/exclusion and reimbursements.",
+    heroDescription:
+      "Give employees a simple way to submit claims and give finance complete control over approvals, payroll treatment, and payout tracking.",
+    accentColor: "purple",
+    features: [
+      {
+        title: "Claim Allocation by Policy",
+        description:
+          "Assign claim categories and limits by role, grade, department, or location so employees only see eligible expense types.",
+      },
+      {
+        title: "Payroll Inclusion/Exclusion Rules",
+        description:
+          "Define whether each approved claim is included in payroll, paid outside payroll, or excluded from salary runs entirely.",
+      },
+      {
+        title: "Approval Workflows",
+        description:
+          "Route expenses through configurable multi-step approvals with automatic escalations and full decision history.",
+      },
+      {
+        title: "Reimbursement Tracking",
+        description:
+          "Track claim status end-to-end: submitted, approved, processed, reimbursed, or rejected, with timestamps for each stage.",
+      },
+      {
+        title: "Receipt & Document Validation",
+        description:
+          "Capture and verify receipts, invoices, and supporting documents to reduce fraud and improve audit readiness.",
+      },
+      {
+        title: "Expense Analytics",
+        description:
+          "Monitor claim trends, department spend, reimbursement cycle times, and policy exceptions through real-time dashboards.",
+      },
+    ],
+    stats: [
+      { value: "70%", label: "Faster claim processing" },
+      { value: "100%", label: "Reimbursement visibility" },
+      { value: "0", label: "Manual payroll reconciliations" },
+    ],
+    mockupType: "payroll",
+  },
+  {
     slug: "employee-records",
     product: "LoqHRMS",
     productSlug: "hrms",
@@ -225,12 +275,12 @@ export const featurePages: FeaturePage[] = [
   },
   {
     slug: "ats",
-    product: "LoqTalent",
+    product: "LoqHire",
     productSlug: "talent",
     title: "Applicant Tracking System",
     tagline: "Your entire hiring pipeline, organised and moving.",
     description:
-      "LoqTalent ATS gives your team a clear visual pipeline for every open role — so candidates never fall through the cracks and hiring decisions happen faster.",
+      "LoqHire ATS gives your team a clear visual pipeline for every open role — so candidates never fall through the cracks and hiring decisions happen faster.",
     heroDescription:
       "From application received to offer signed, every step of your hiring process lives in one place. Collaborate, comment, and move candidates with a click.",
     accentColor: "blue",
@@ -275,12 +325,12 @@ export const featurePages: FeaturePage[] = [
   },
   {
     slug: "ai-resume-screener",
-    product: "LoqTalent",
+    product: "LoqHire",
     productSlug: "talent",
     title: "AI Resume Screener",
     tagline: "Let AI read the resumes. You meet the right people.",
     description:
-      "LoqTalent's AI engine reads every resume, scores candidates against your job criteria, and presents a ranked shortlist — in seconds, not days.",
+      "LoqHire's AI engine reads every resume, scores candidates against your job criteria, and presents a ranked shortlist — in seconds, not days.",
     heroDescription:
       "Built on advanced NLP, our screener understands skills, experience, and context — not just keywords. Reduce screening time by 90% without sacrificing quality.",
     accentColor: "blue",
@@ -322,56 +372,6 @@ export const featurePages: FeaturePage[] = [
       { value: "94%", label: "Recruiter satisfaction rate" },
     ],
     mockupType: "screener",
-  },
-  {
-    slug: "talent-acquisition",
-    product: "LoqTalent",
-    productSlug: "talent",
-    title: "Talent Acquisition",
-    tagline: "Build the team you need, faster than ever.",
-    description:
-      "LoqTalent's Talent Acquisition suite brings together job posting, candidate sourcing, agency management, and talent pool building — all in one platform.",
-    heroDescription:
-      "From crafting job descriptions to building a bench of future candidates, LoqTalent gives your recruiting team superpowers.",
-    accentColor: "blue",
-    features: [
-      {
-        title: "Multi-Board Job Posting",
-        description:
-          "Publish job listings to LinkedIn, Jobberman, Indeed, and your careers page simultaneously with one click.",
-      },
-      {
-        title: "Talent Pool",
-        description:
-          "Build a searchable database of past applicants and passive candidates for future roles.",
-      },
-      {
-        title: "Agency Management",
-        description:
-          "Invite and manage external recruiting agencies, share roles, and track their submissions in one place.",
-      },
-      {
-        title: "Candidate Sourcing",
-        description:
-          "Proactively search and engage talent from integrated professional networks and databases.",
-      },
-      {
-        title: "Offer Management",
-        description:
-          "Generate, send, and track offer letters digitally — with e-signature built in.",
-      },
-      {
-        title: "Onboarding Handoff",
-        description:
-          "When a candidate accepts, automatically trigger the LoqHRMS onboarding workflow — zero manual handoff.",
-      },
-    ],
-    stats: [
-      { value: "6+", label: "Job boards in one click" },
-      { value: "50%", label: "Lower cost-per-hire" },
-      { value: "3×", label: "Larger candidate pipeline" },
-    ],
-    mockupType: "talent",
   },
   {
     slug: "hotels",

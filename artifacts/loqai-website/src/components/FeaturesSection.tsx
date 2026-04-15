@@ -43,21 +43,21 @@ const features = [
     title: "AI Resume Screener",
     description:
       "Our AI reads, scores, and ranks thousands of resumes in seconds — matched to your job criteria.",
-    product: "LoqTalent",
+    product: "LoqHire",
   },
   {
     icon: Target,
     title: "Applicant Tracking",
     description:
       "Visualise your full hiring pipeline. Move candidates through stages with collaborative notes.",
-    product: "LoqTalent",
+    product: "LoqHire",
   },
   {
     icon: Users,
     title: "Talent Acquisition",
     description:
       "Post to multiple job boards, manage agencies, and build a talent pool — all in one platform.",
-    product: "LoqTalent",
+    product: "LoqHire",
   },
   {
     icon: Zap,
@@ -70,14 +70,14 @@ const features = [
 
 const productColors: Record<string, string> = {
   LoqHRMS: "purple",
-  LoqTalent: "blue",
+  LoqHire: "blue",
 };
 
 export default function FeaturesSection() {
   return (
     <section className="py-24 bg-black relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.05)_0%,transparent_70%)]" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[96rem] mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <p className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
             Everything you need

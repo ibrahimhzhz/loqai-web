@@ -1,4 +1,5 @@
 import { ArrowRight, Check, ChevronRight, Clock, Package, DollarSign, FileText, Layers, Brain, Target, Users } from "lucide-react";
+import { FormEvent, useState } from "react";
 import { useRoute } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -52,6 +53,8 @@ interface Props {
 export default function FeatureDetailPage({ slug }: Props) {
   const page = getFeaturePage(slug);
   if (!page) return <NotFound />;
+  const [trialEmail, setTrialEmail] = useState("");
+  const [isTrialSubmitted, setIsTrialSubmitted] = useState(false);
 
   const MockupComponent = mockupComponents[page.mockupType];
   const isBlue = page.accentColor === "blue";
@@ -63,6 +66,15 @@ export default function FeatureDetailPage({ slug }: Props) {
   const glowClass = isBlue ? "bg-blue-300/30" : "bg-purple-300/30";
   const borderHighlight = isBlue ? "border-blue-300" : "border-purple-300";
 
+  const handleTrialRequest = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const trimmedEmail = trialEmail.trim();
+    if (!trimmedEmail) return;
+
+    setIsTrialSubmitted(true);
+    setTrialEmail("");
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
@@ -70,7 +82,7 @@ export default function FeatureDetailPage({ slug }: Props) {
       <main className="pt-20">
         {/* Breadcrumb */}
         <div className="bg-gray-50 border-b border-gray-100 py-3">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center gap-2 text-xs text-gray-400">
+          <div className="max-w-[96rem] mx-auto px-6 lg:px-8 flex items-center gap-2 text-xs text-gray-400">
             <a href="/" className="hover:text-gray-700 transition-colors">Home</a>
             <ChevronRight size={12} />
             <a href="/" className="hover:text-gray-700 transition-colors">{page.product}</a>
@@ -82,7 +94,7 @@ export default function FeatureDetailPage({ slug }: Props) {
         {/* Hero */}
         <section className="py-20 bg-white relative overflow-hidden">
           <div className={`absolute inset-0 ${isBlue ? "bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.06)_0%,transparent_60%)]" : "bg-[radial-gradient(ellipse_at_top_left,rgba(139,92,246,0.06)_0%,transparent_60%)]"}`} />
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="max-w-[96rem] mx-auto px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-5">
@@ -101,21 +113,43 @@ export default function FeatureDetailPage({ slug }: Props) {
                 <p className="text-gray-500 leading-relaxed mb-8 text-base">
                   {page.description}
                 </p>
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
                   <a
-                    href="#"
-                    className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${gradientClass} text-white font-medium rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg`}
+                    href="#trial-request-email"
+                    className={`flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r ${gradientClass} text-white font-medium rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg`}
                   >
-                    Get Started Free
+                    Request a 21-day free trial
                     <ArrowRight size={15} />
                   </a>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2 px-6 py-3 border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 hover:bg-gray-50 font-medium rounded-xl transition-colors text-sm"
+                  <form
+                    onSubmit={handleTrialRequest}
+                    className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto"
                   >
-                    Book a Demo
-                  </a>
+                    <input
+                      id="trial-request-email"
+                      type="email"
+                      value={trialEmail}
+                      onChange={(event) => {
+                        setTrialEmail(event.target.value);
+                        if (isTrialSubmitted) setIsTrialSubmitted(false);
+                      }}
+                      placeholder="james@acmecorp.com"
+                      required
+                      className="w-full sm:w-64 px-4 py-3 rounded-xl border border-gray-300 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400/60 focus:border-purple-400 text-sm"
+                    />
+                    <button
+                      type="submit"
+                      className="px-5 py-3 rounded-xl border border-gray-300 bg-white text-gray-700 hover:text-gray-900 hover:border-gray-400 hover:bg-gray-50 font-medium transition-colors text-sm"
+                    >
+                      Send
+                    </button>
+                  </form>
                 </div>
+                {isTrialSubmitted && (
+                  <p className="mt-3 text-sm text-green-600">
+                    Thanks. We have received your request and will contact you soon.
+                  </p>
+                )}
 
                 <div className="flex gap-6 mt-10">
                   {page.stats.map((stat) => (
@@ -141,7 +175,7 @@ export default function FeatureDetailPage({ slug }: Props) {
 
         {/* Features Grid */}
         <section className="py-20 bg-gray-50 relative">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-[96rem] mx-auto px-6 lg:px-8">
             <div className="text-center mb-14">
               <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${accentTextClass}`}>
                 Everything included
@@ -184,7 +218,7 @@ export default function FeatureDetailPage({ slug }: Props) {
                 href="#"
                 className={`flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r ${gradientClass} text-white font-medium rounded-xl hover:opacity-90 transition-opacity text-sm shadow-lg shadow-purple-200`}
               >
-                Start Free Trial
+                Book a demo
                 <ArrowRight size={15} />
               </a>
               <a

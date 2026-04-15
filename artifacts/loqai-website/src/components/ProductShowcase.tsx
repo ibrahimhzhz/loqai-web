@@ -19,10 +19,10 @@ const products = [
   },
   {
     id: "talent",
-    name: "LoqTalent",
+    name: "LoqHire",
     tagline: "AI-Powered Hiring Intelligence",
     description:
-      "Stop drowning in resumes. LoqTalent's AI screener evaluates candidates against your criteria in seconds, so your team only talks to the best-fit applicants.",
+      "Stop drowning in resumes. LoqHire's AI screener evaluates candidates against your criteria in seconds, so your team only talks to the best-fit applicants.",
     benefits: [
       "Screen 10x more candidates in less time",
       "Reduce bias with objective AI scoring",
@@ -40,7 +40,7 @@ export default function ProductShowcase() {
 
   return (
     <section className="py-24 bg-zinc-950 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[96rem] mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">
             Our Products
